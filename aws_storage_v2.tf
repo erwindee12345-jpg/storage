@@ -187,7 +187,8 @@ resource "aws_s3_bucket" "passcomplex" {
           AWS = "arn:aws:iam::${var.account_id}:role/${var.specific_role}"
         }
         Action   = ["s3:PutObject"]
-        Resource = "arn:aws:s3:::superfail/*"
+        Resource = "arn:aws:s3:::${var.passcomplex_bucket_name}/*"
+
       }
     ]
   })
